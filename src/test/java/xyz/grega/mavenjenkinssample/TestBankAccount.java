@@ -1,7 +1,7 @@
 package xyz.grega.mavenjenkinssample;
 
-import junit.framework.Assert;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class TestBankAccount {
 
@@ -9,7 +9,14 @@ public class TestBankAccount {
     public void testDebitWithSufficientFunds() {
         BankAccount ba = new BankAccount(10);
         double amount = ba.debit(5);
-        Assert.assertEquals(5.0, amount);
+        assertEquals(5.0, amount, 0);
+    }
+
+    @Test
+    public void testDebitWithInsufficientFunds() {
+        BankAccount ba = new BankAccount(10);
+        double amount = ba.debit(11);
+        assertEquals(10.0, amount, 0);
     }
 
 }
