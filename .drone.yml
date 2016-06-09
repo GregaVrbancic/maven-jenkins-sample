@@ -6,4 +6,4 @@ build:
     - chmod +x apache-maven-3.3.9/bin/mvn
     - export PATH=$PWD/apache-maven-3.3.9/bin:${PATH}
     - mvn -q install -DskipTests=true
-    - mvn run test
+    - mvn test
